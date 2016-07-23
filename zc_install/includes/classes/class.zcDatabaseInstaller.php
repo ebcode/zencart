@@ -164,7 +164,11 @@ class zcDatabaseInstaller
         return 1;
     } else 
     {
+<<<<<<< HEAD
     	return 0;
+=======
+      return 0;
+>>>>>>> f95bab93725ff23e1c96d96bc4177d2bfe315f00
     }
   }
   public function parserDropTableIfExists ()
@@ -470,6 +474,7 @@ class zcDatabaseInstaller
       if ($fp)
       {
         $arr = array('total'=>'0', 'progress'=>$progress, 'message'=>$this->extendedOptions['message']);
+<<<<<<< HEAD
         
         if($error){
         	$arr['error_message'] = TEXT_ERROR_DATABASE_INSTALL;
@@ -479,6 +484,17 @@ class zcDatabaseInstaller
         fclose($fp);
         if($error){
         	die('!');
+=======
+
+        if($error){
+          $arr['error_message'] = TEXT_ERROR_DATABASE_INSTALL;
+        }
+
+        fwrite($fp, json_encode($arr));
+        fclose($fp);
+        if($error){
+          die('!');
+>>>>>>> f95bab93725ff23e1c96d96bc4177d2bfe315f00
         }
       }
     }
